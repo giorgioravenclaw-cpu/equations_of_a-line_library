@@ -1,0 +1,45 @@
+#prima cosa da dire noi sappiamo che un trapezzio è un quadrilatero con due lati paralleli quindi se 2 segmenti sono paralleli fra loro voldire che è un trapezzio isoscele 
+
+
+
+
+import josef
+
+Xa,Ya,Xb,Yb=josef.acquisisci_due_punti()
+
+coefficente_angolare1=josef.calcola_coefficente_angolare(Xa,Ya,Xb,Yb)
+
+
+print("il coefficente angolare è:",coefficente_angolare1)
+
+
+Xc,Yc,Xd,Yd=josef.acquisisci_due_punti()
+
+
+
+
+coefficente_angolare2=josef.calcola_coefficente_angolare(Xc,Yc,Xd,Yd)
+
+
+print("il coefficente angolare è:",coefficente_angolare2)
+
+if coefficente_angolare2==coefficente_angolare1:
+    print("sono paralleli")
+
+
+else:
+    print("non sono paralleli")
+
+
+
+
+"""
+numeri = [1, 2, 3, 4]
+
+# Applica la funzione 'str' (testo) a ogni numero della lista
+risultato = map(str, numeri)
+
+# Convertiamo in lista per vedere il contenuto
+print(list(risultato))  # Output: ['1', '2', '3', '4']
+
+"""
