@@ -1,0 +1,33 @@
+
+import josef
+import sympy as sp
+
+
+retta = sp.sympify(input("dimmi l'equazione della retta (es: a*x - y + b)... "))
+
+x, y, a, b = sp.symbols('x y a b')
+
+Xa, Ya = josef.acquisisci_un_punto()  
+Xb, Yb = josef.acquisisci_un_punto()   
+
+# sostituisco il punto A al posto di x e y nell'equazione della retta
+eq1 = retta.subs({x: Xa, y: Ya})
+
+# sostituisco il punto B al posto di x e y nell'equazione della retta
+eq2 = retta.subs({x: Xb, y: Yb})
+
+# risolvo il sistema delle due equazioni nelle incognite a e b
+soluzione = sp.solve([eq1, eq2], [a, b])
+
+print("Soluzione: (a;b) ", soluzione)
+
+# costruisco l'equazione finale sostituendo i valori trovati
+equazione_finale = retta.subs(soluzione)
+print("Equazione della retta:  ", sp.Eq(equazione_finale, 0))
+
+
+
+
+
+
+ 
