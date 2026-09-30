@@ -1,0 +1,38 @@
+import sympy as sp
+import josef
+
+i=input("cosa vuoi (passante per il punt P) (parallela alla retta1 tal dei tali) (perpendicolare alla retta2 tal dei tali) (perpendicolare alla retta3 tal dei tali) (perpendicolare alla bisetrice del primo e del terzo quadrante)")
+
+
+        
+if i=="passante per il punt P":
+            
+            retta = sp.sympify(input("dimmi l'equazione della retta..."))
+            Xa,Ya=josef.acquisisci_un_punto()
+
+            k=josef.data_equazione_retta_e_punto_e_valore_k_dato_programma_dare_soluzione_k(retta,Xa,Ya)
+           
+            print("la soluzione è k=",k)
+           
+
+if i=="parallela alla retta1 tal dei tali" or "parallela alla retta2 tal dei tali" or "perpendicolare alla retta2 tal dei tali":
+        
+        Xa=input("dimmi lequazione ")
+        N1=input("dimmi il risultato che deve avere")
+        risultato=josef.risolvere_equazione_primo_grado_info_date_dall_programmatore(Xa,N1)
+
+        print("per rendere le due rette parallele la k deve essere uguale a: ",risultato)
+
+if i=="perpendicolare alla bisetrice del primo e del terzo quadrante":
+        
+        Xa=input("dimmi lequazione ")
+        N1=-1
+        risultato=josef.risolvere_equazione_primo_grado_info_date_dall_programmatore(Xa,N1)
+
+        print("per rendere le due rette parallele la k deve essere uguale a: ",risultato)
+        
+
+        
+
+
+
