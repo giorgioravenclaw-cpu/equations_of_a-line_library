@@ -1,0 +1,12 @@
+import josef
+
+print("dimmi i due punti R e Q")
+Xa=0
+Ya=0
+X1,Y1,X2,Y2=josef.acquisisci_due_punti()
+
+m=josef.calcola_coefficente_angolare(X1,Y1,X2,Y2)
+#faccio lantireciproco perche è perpendicolare e non parallelo 
+#m=-1/m
+
+josef.trova_equazione_retta_dato_punto_e_coefficenteangolare(m,Xa,Ya)
