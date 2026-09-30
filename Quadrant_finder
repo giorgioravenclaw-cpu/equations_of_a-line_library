@@ -1,0 +1,41 @@
+
+
+
+
+
+
+import sympy as sp
+import josef
+
+
+Xa, Ya = josef.acquisisci_un_punto()
+
+simboli = (Xa.free_symbols | Ya.free_symbols) #trova il simbolo
+
+if simboli:
+    incognita = list(simboli)[0] #creo lista con le incognite e la metto al posto 0
+else:
+    incognita = None
+
+print(f"Incognita rilevata: {incognita}")
+
+#risolvo le varie equazioni
+
+if incognita is not None:
+    cond_secondo_quadrante = sp.solve([Xa < 0, Ya > 0], incognita)
+    print(f"Il punto appartiene al II quadrante quando: {cond_secondo_quadrante}")
+
+    sol_asse_x = sp.solve(sp.Eq(Ya, 0), incognita)
+    print(f"Appartiene all'asse X quando {incognita} = {sol_asse_x}")
+
+    sol_ord_tripla = sp.solve(sp.Eq(Ya, 3*Xa), incognita)
+    print(f"Ordinata tripla dell'ascissa quando {incognita} = {sol_ord_tripla}")
+
+    sol_bisettrice = sp.solve(sp.Eq(Ya, Xa), incognita)
+    print(f"Appartiene alla bisettrice I-III quadrante quando {incognita} = {sol_bisettrice}")
+else:
+    print("Il punto non contiene incognite, valutiamo direttamente i valori numerici")
+
+
+
+
