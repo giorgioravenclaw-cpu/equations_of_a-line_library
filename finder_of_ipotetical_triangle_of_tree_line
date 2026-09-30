@@ -1,0 +1,52 @@
+import josef
+
+import math as th
+
+equazione=input("dimmi cosa vuoi fare con questo trinagolo no che non avevi considerato (equazione di una retta) (area del triangolo) (misura dell altezza relativa di 2 punti) ")
+
+
+if equazione=="equazione di una retta":
+
+    #Xa,Ya,Xb,Yb=josef.acquisisci_due_punti()
+
+    josef.trova_equazione_retta()
+#Xa,Ya,Xb,Yb
+elif equazione=="area del triangolo":
+
+
+    print("perche funzioni i primi 2 punti a essere inseriti dovranno essere quelli che determinano la base e il terzo quello con la Y maggiore ")
+
+    Xa,Ya,Xb,Yb,Xc,Yc=josef.acquisisci_tre_punti()
+
+    area=josef.area_triangolo(Xa,Ya,Xb,Yb,Xc,Yc)
+
+    print(f"l'area è: {area}")
+
+
+
+    
+
+
+elif equazione=="misura dell altezza relativa di 2 punti":
+
+
+    print("mettete prma le cordinate dei due punti che delimitano il segmento su cuoi calcolare laltezza relatica es(A B C devo calcolare laltezza relativa a AB allora metto: Xa,Ya,Xb,Yb,Xc,Yc)")
+
+    Xa,Ya,Xb,Yb,Xc,Yc=josef.acquisisci_tre_punti()
+
+    altezza_relativa=josef.altezza_relativa_AB(Xa,Ya,Xb,Yb,Xc,Yc)
+
+    print(f"laltezza relaziva è uguale a: {altezza_relativa}")
+
+
+
+#Xa,Ya,Xb,Yb,Xc,Yc=josef.acquisisci_tre_punti()
+
+
+#Xa,Ya,Xb,Yb=josef.acquisisci_due_punti()
+
+
+
+
+
+
